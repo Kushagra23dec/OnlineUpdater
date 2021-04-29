@@ -22,16 +22,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.SimpleTimeZone;
 
 public class Signup extends AppCompatActivity {
 
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference ref = db.getReference();
-    DatabaseReference Fnref = ref.child("FirstName");
-    DatabaseReference Lnref = ref.child("LastName");
-    DatabaseReference Eref = ref.child("Email");
-    DatabaseReference Pref = ref.child("Password");
+//    DatabaseReference Fnref = ref.child("FirstName");
+//    DatabaseReference Lnref = ref.child("LastName");
+//    DatabaseReference Eref = ref.child("Email");
+//    DatabaseReference Pref = ref.child("Password");
 
 
 
@@ -121,11 +123,11 @@ public class Signup extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.i("TAG", "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                
-                                Fnref.setValue(fName.getText().toString());
-                                Lnref.setValue(lName.getText().toString());
-                                Eref.setValue(email.getText().toString());
-                                Pref.setValue(password.getText().toString());
+
+                                // Update Details
+                                UpdateDetails();
+
+
 
                                 Toast.makeText(Signup.this, "Authentication Success.",
                                         Toast.LENGTH_SHORT).show();
@@ -150,4 +152,28 @@ public class Signup extends AppCompatActivity {
         startActivity(i);
     }
 
+    private void UpdateDetails(){
+
+//        Fnref.setValue(fName.getText().toString());
+//        Lnref.setValue(lName.getText().toString());
+//        Eref.setValue(email.getText().toString());
+//        Pref.setValue(password.getText().toString());
+
+
+
+
+        Map<String, String> userData = new HashMap<String, String>();
+
+
+
+
+        userData.put("Email", email.getText().toString());
+        userData.put("Password", password.getText().toString());
+        userData.put("FirstName", fName.getText().toString());
+        userData.put( "LastName" ,lName.getText().toString());
+
+        ref.child(mAuth.getUid()).setValue(userData);
+
+
+    }
 }
