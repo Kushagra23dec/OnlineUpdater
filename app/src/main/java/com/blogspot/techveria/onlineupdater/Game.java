@@ -157,4 +157,16 @@ public class Game extends AppCompatActivity {
     }
 
 
+    public void logout (View view){
+        FirebaseAuth.getInstance().signOut();
+        Toast.makeText(Game.this, "Bye!!!",
+                Toast.LENGTH_SHORT).show();
+
+        Intent in = new Intent(Game.this, MainActivity.class);
+
+        startActivity(in);
+
+    }
+
+
 }
