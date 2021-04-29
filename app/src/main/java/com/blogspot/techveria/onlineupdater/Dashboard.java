@@ -50,4 +50,9 @@ public class Dashboard extends AppCompatActivity {
          startActivity(in);
 
     }
+
+    public void onGame(View view){
+        Intent i = new Intent(Dashboard.this, Game.class);
+        startActivity(i);
+    }
 }
