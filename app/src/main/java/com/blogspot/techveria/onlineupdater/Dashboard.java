@@ -37,7 +37,7 @@ public class Dashboard extends AppCompatActivity {
 
         //se.setText(" " +FirebaseAuth.getInstance().getUid());
 
-        se.setText(" "+FirebaseAuth.getInstance().getCurrentUser()+"  -> "+FirebaseAuth.getInstance().getUid()+" -> IOjtAvytiMS5zn9YRyGRHLHnRWU2 ");
+        // se.setText(" "+FirebaseAuth.getInstance().getCurrentUser()+"  -> "+FirebaseAuth.getInstance().getUid()+" -> IOjtAvytiMS5zn9YRyGRHLHnRWU2 ");
     }
 
     public void logout (View view){

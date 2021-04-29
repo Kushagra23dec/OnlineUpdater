@@ -18,7 +18,7 @@ public class Game extends AppCompatActivity {
 
     // Write a message to the database
     FirebaseDatabase db = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = db.getReference("message");
+    DatabaseReference myRef = db.getReference();
     DatabaseReference gameRef = myRef.child("game");
 
 
@@ -31,7 +31,7 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.displayText);
         rock = findViewById(R.id.rock);
         paper = findViewById(R.id.paper);
         scissor = findViewById(R.id.scissor);
@@ -58,4 +58,6 @@ public class Game extends AppCompatActivity {
             }
         });
     }
+
+
 }
