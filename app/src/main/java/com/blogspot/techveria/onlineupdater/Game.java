@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Game extends AppCompatActivity {
 
 
-    TextView dName;
+
 
     // Write a message to the database
     private  FirebaseAuth mAuth;
@@ -33,6 +33,7 @@ public class Game extends AppCompatActivity {
     DatabaseReference gameRef = myRef.child("game");
 
 
+    TextView dName;
 
     TextView textView;
     Button rock,paper,scissor;
