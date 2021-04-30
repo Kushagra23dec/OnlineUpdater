@@ -30,12 +30,6 @@ public class Signup extends AppCompatActivity {
 
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference ref = db.getReference();
-//    DatabaseReference Fnref = ref.child("FirstName");
-//    DatabaseReference Lnref = ref.child("LastName");
-//    DatabaseReference Eref = ref.child("Email");
-//    DatabaseReference Pref = ref.child("Password");
-
-
 
     private  FirebaseAuth mAuth;
 
@@ -55,31 +49,10 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-//// Read from the database
-//        rootref.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                // This method is called once with the initial value and again
-//                // whenever data at this location is updated.
-//                String value = dataSnapshot.getValue(String.class);
-//                Log.i("TAG", "Value is: " + value);
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError error) {
-//                // Failed to read value
-//                Log.i("TAG", "Failed to read value.", error.toException());
-//            }
-//        });
-
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         fName = findViewById(R.id.firstName);
         lName = findViewById(R.id.lastName);
-
-
-
-
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -154,18 +127,7 @@ public class Signup extends AppCompatActivity {
 
     private void UpdateDetails(){
 
-//        Fnref.setValue(fName.getText().toString());
-//        Lnref.setValue(lName.getText().toString());
-//        Eref.setValue(email.getText().toString());
-//        Pref.setValue(password.getText().toString());
-
-
-
-
         Map<String, String> userData = new HashMap<String, String>();
-
-
-
 
         userData.put("Email", email.getText().toString());
         userData.put("Password", password.getText().toString());
